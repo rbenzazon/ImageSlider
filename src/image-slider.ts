@@ -119,6 +119,7 @@ export default async function imageSlider(
     isDragging = true;
     startX = e.pageX;
     slider.addEventListener("mousemove", onMouseMove);
+    element.classList.add("grabbing");
   };
 
   const onMouseMove = (e: MouseEvent) => {
@@ -146,6 +147,7 @@ export default async function imageSlider(
     }
     finishTransition();
     slider.removeEventListener("mousemove", onMouseMove);
+    element.classList.remove("grabbing");
   };
 
   const onResize = () => {
